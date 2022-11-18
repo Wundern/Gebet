@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install -D webpack-cli",
+    "start": "npm",
     "build": "webpack",
     "watch": "webpack -w"
   },
