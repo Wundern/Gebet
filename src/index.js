@@ -2,7 +2,7 @@ import Peer from "skyway-js";
 
 // ピアの準備
 const peer = new Peer({
-  key: "f9ff0968-1831-4871-8a05-61c2aeb2bc5f",
+  key: "<SkyWayのAPIキー>",
   debug: 3,
 });
 // PeerID取得時に呼ばれる

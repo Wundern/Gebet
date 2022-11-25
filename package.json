@@ -1,13 +1,13 @@
 {
-  "name": "Gebet",
+  "name": "gebet",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "live-server dist",
     "build": "webpack",
     "watch": "webpack -w"
-  },
-  "repository": {
+  },"repository": {
     "type": "git",
     "url": "git+https://github.com/Wundern/Gebet.git"
   },
