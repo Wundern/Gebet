@@ -69,7 +69,7 @@ def callback_handling():
 @app.route('/login')
 def login():
     #return auth0.authorize_redirect(redirect_uri='com.auth0.gebet://login-callback')
-    return oauth.auth0.authorize_redirect(redirect_uri='https://f304-240f-34-2d24-1-aca5-6fc8-7ad5-e6be.jp.ngrok.io/callback')
+    return oauth.auth0.authorize_redirect(redirect_uri='https://gebet2023.azurewebsites.net/callback')
 
 @app.route('/')
 def home():
