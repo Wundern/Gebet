@@ -1,4 +1,4 @@
-import { nowInSec, SkyWayAuthToken, SkyWayContext, SkyWayRoom, SkyWayStreamFactory, uuidV4 } from '@skyway-sdk/room';
+const { nowInSec, SkyWayAuthToken, SkyWayContext, SkyWayRoom, SkyWayStreamFactory, uuidV4 } = skyway_room;
 const token = new SkyWayAuthToken({
     jti: uuidV4(),
     iat: nowInSec(),
