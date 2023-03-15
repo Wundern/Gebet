@@ -58,14 +58,24 @@ const token = new SkyWayAuthToken({
     video.attach(localVideo); // 3
     await localVideo.play(); // 4
 
-    joinButton.onclick = async () => {
-        if (roomNameInput.value === '') return;
-      
+    // joinButton.onclick = async () => {
+    // (async () => {
+        // if (roomNameInput.value === '') return;
+        // URLを取得
+        let url = new URL(window.location.href);
+
+        // URLSearchParamsオブジェクトを取得
+        let params = url.searchParams;
+
+        // getメソッド
+        roomID = params.get('id'); // 5
+        console.log(roomID);
+
         const context = await SkyWayContext.Create(token);
     
         const room = await SkyWayRoom.FindOrCreate(context, {
             type: 'p2p',
-            name: roomNameInput.value,
+            name: roomID,
         });
         
         const me = await room.join();
@@ -114,6 +124,6 @@ const token = new SkyWayAuthToken({
             // 2
             subscribeAndAttach(e.publication);
           });
-    };
+    // })();
 
 })(); // 1

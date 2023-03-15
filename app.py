@@ -59,6 +59,7 @@ def callback_handling():
         'name': userinfo['name'],
         'picture': userinfo['picture']
     }
+    roomID = userinfo['id']
     return render_template('dashboard.html',
                            userinfo=session['profile'],
                            userinfo_pretty=json.dumps(session['jwt_payload'], indent=4))
@@ -75,7 +76,9 @@ def login():
 def home():
     return render_template('home.html')
 
-
+@app.route('/room')
+def room():
+    return render_template('dashboard.html')
 
 def requires_auth(f):
     @wraps(f)
