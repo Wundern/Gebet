@@ -46,25 +46,25 @@ oauth.register(
 @app.route('/callback', methods=["GET", "POST"])
 def callback_handling():
     # Handles response from token endpoint
-    token = oauth.auth0.authorize_access_token()
-    session["user"] = token
+    # token = oauth.auth0.authorize_access_token()
+    # session["user"] = token
     
-    resp = oauth.auth0.get('userinfo')
-    userinfo = resp.json()
+    # resp = oauth.auth0.get('userinfo')
+    # userinfo = resp.json()
 
-    # Store the user information in flask session.
-    session['jwt_payload'] = userinfo
-    session['profile'] = {
-        'user_id': userinfo['sub'],
-        'name': userinfo['name'],
-        'picture': userinfo['picture']
-    }
-    roomID = userinfo['id']
-    return render_template('dashboard.html',
-                           userinfo=session['profile'],
-                           userinfo_pretty=json.dumps(session['jwt_payload'], indent=4))
-    # return redirect('/dashboard')
-    # return redirect('/')
+    # # Store the user information in flask session.
+    # session['jwt_payload'] = userinfo
+    # session['profile'] = {
+    #     'user_id': userinfo['sub'],
+    #     'name': userinfo['name'],
+    #     'picture': userinfo['picture']
+    # }
+    # roomID = userinfo['id']
+    # return render_template('dashboard.html',
+    #                        userinfo=session['profile'],
+    #                        userinfo_pretty=json.dumps(session['jwt_payload'], indent=4))
+    # return redirect('dashboard')
+    return redirect('/detour')
 
 
 @app.route('/login')
@@ -75,6 +75,10 @@ def login():
 @app.route('/')
 def home():
     return render_template('home.html')
+
+@app.route('/detour')
+def detour():
+    return render_template('detour.html')
 
 @app.route('/room')
 def room():
