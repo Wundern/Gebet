@@ -59,7 +59,7 @@ def callback_handling():
         'name': userinfo['name'],
         'picture': userinfo['picture']
     }
-    roomID = userinfo['id']
+    # roomID = userinfo['id']
     return render_template('detour.html',
                            userinfo=session['profile'],
                            userinfo_pretty=json.dumps(session['jwt_payload'], indent=4))
