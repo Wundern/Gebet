@@ -3,4 +3,17 @@
     <h2>Welcome {{userinfo['name']}}</h2>
     <pre>{{userinfo_pretty}}</pre>
     <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
+    
+    <p id="start">新たにミーティングを始める</p>
+    <script>
+        document.getElementById("start").addEventListener("click", function () {
+            let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let rand_str = '';
+            for ( var i = 0; i < 8; i++ ) {
+                rand_str += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            url = 'https://gebet2023.azurewebsites.net/room?id=' + rand_str;
+            location.replace(url);
+        }, false);
+    </script>
 </div>
