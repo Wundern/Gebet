@@ -89,15 +89,17 @@ const token = new SkyWayAuthToken({
             // 3
             if (publication.publisher.id === me.id) return;
           
-            // const subscribeButton = document.createElement('button'); // 3-1
-            // subscribeButton.textContent = `${publication.publisher.id}: ${publication.contentType}`;
+            const subscribeButton = document.createElement('button'); // 3-1
+            subscribeButton.textContent = `${publication.publisher.id}: ${publication.contentType}`;
           
-            // buttonArea.appendChild(subscribeButton);
+            buttonArea.appendChild(subscribeButton);
           
             // subscribeButton.onclick = async () => {
+            const startvideo = () => {
               // 3-2
-              const { stream } = await me.subscribe(publication.id); // 3-2-1
-          
+              // const { stream } = await me.subscribe(publication.id); // 3-2-1
+              const { stream } = me.subscribe(publication.id); // 3-2-1
+
               let newMedia; // 3-2-2
               switch (stream.track.kind) {
                 case 'video':
@@ -115,7 +117,8 @@ const token = new SkyWayAuthToken({
               }
               stream.attach(newMedia); // 3-2-3
               remoteMediaArea.appendChild(newMedia);
-            // };
+            };
+            startvideo();
           };
           
           room.publications.forEach(subscribeAndAttach); // 1
