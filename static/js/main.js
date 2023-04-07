@@ -95,10 +95,9 @@ const token = new SkyWayAuthToken({
             buttonArea.appendChild(subscribeButton);
           
             // subscribeButton.onclick = async () => {
-            const startvideo = () => {
+            (async () => {
               // 3-2
-              // const { stream } = await me.subscribe(publication.id); // 3-2-1
-              const { stream } = me.subscribe(publication.id); // 3-2-1
+              const { stream } = await me.subscribe(publication.id); // 3-2-1
 
               let newMedia; // 3-2-2
               switch (stream.track.kind) {
@@ -117,8 +116,7 @@ const token = new SkyWayAuthToken({
               }
               stream.attach(newMedia); // 3-2-3
               remoteMediaArea.appendChild(newMedia);
-            };
-            startvideo();
+            });
           };
           
           room.publications.forEach(subscribeAndAttach); // 1
