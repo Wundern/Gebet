@@ -122,8 +122,11 @@ const token = new SkyWayAuthToken({
               newMedia_audio.controls = true;
               newMedia_audio.autoplay = true;
 
-              stream.attach(newMedia_video, newMedia_audio); // 3-2-3
-              remoteMediaArea.appendChild(newMedia_video, newMedia_audio);
+              // stream.attach(newMedia); // 3-2-3
+              // remoteMediaArea.appendChild(newMedia);
+
+              stream.attach(newMedia_video); // 3-2-3
+              remoteMediaArea.appendChild(newMedia_video);
             };
           };
           
