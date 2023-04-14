@@ -95,7 +95,7 @@ const token = new SkyWayAuthToken({
             buttonArea.appendChild(subscribeButton);
           
             // subscribeButton.onclick = async () => {
-            async () => {
+            (async () => {
               // 3-2
               const { stream } = await me.subscribe(publication.id); // 3-2-1
 
@@ -130,7 +130,7 @@ const token = new SkyWayAuthToken({
               remoteMediaArea.appendChild(newMedia_video);
               stream.attach(newMedia_audio); // 3-2-3
               remoteMediaArea.appendChild(newMedia_audio);
-            };
+            })();
           };
           
           room.publications.forEach(subscribeAndAttach); // 1
