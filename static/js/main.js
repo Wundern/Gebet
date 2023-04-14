@@ -94,8 +94,7 @@ const token = new SkyWayAuthToken({
           
             buttonArea.appendChild(subscribeButton);
           
-            // subscribeButton.onclick = async () => {
-            subscribeButton.addEventListener = async () => {
+            subscribeButton.onclick = async () => {
               // 3-2
               const { stream } = await me.subscribe(publication.id); // 3-2-1
 
