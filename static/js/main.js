@@ -128,8 +128,8 @@ const token = new SkyWayAuthToken({
 
               stream.attach(newMedia_video); // 3-2-3
               remoteMediaArea.appendChild(newMedia_video);
-              stream.attach(newMedia_audio); // 3-2-3
-              remoteMediaArea.appendChild(newMedia_audio);
+              // stream.attach(newMedia_audio); // 3-2-3
+              // remoteMediaArea.appendChild(newMedia_audio);
             })();
           };
           
