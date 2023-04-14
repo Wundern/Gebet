@@ -89,10 +89,10 @@ const token = new SkyWayAuthToken({
             // 3
             if (publication.publisher.id === me.id) return;
           
-            const subscribeButton = document.createElement('button'); // 3-1
-            subscribeButton.textContent = `${publication.publisher.id}: ${publication.contentType}`;
+            // const subscribeButton = document.createElement('button'); // 3-1
+            // subscribeButton.textContent = `${publication.publisher.id}: ${publication.contentType}`;
           
-            buttonArea.appendChild(subscribeButton);
+            // buttonArea.appendChild(subscribeButton);
           
             // subscribeButton.onclick = async () => {
             (async () => {
