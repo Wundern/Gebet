@@ -101,13 +101,13 @@ const token = new SkyWayAuthToken({
               newMedia_video.autoplay = true;
 
               newMedia_audio = document.createElement('audio');
-              newMedia_audio.controls = true;
+              // newMedia_audio.controls = true;
               newMedia_audio.autoplay = true;
 
               stream.attach(newMedia_video);
-              remoteMediaArea.appendChild(newMedia_video);
+              // remoteMediaArea.appendChild(newMedia_video);
               stream.attach(newMedia_audio);
-              remoteMediaArea.appendChild(newMedia_audio);
+              // remoteMediaArea.appendChild(newMedia_audio);
             })();
           };
           
