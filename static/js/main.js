@@ -95,19 +95,23 @@ const token = new SkyWayAuthToken({
               // stream.attach(newMedia_video); // 3-2-3
               // remoteMediaArea.appendChild(newMedia_video);
 
-              let newMedia_video, newMedia_audio;
-              newMedia_video = document.createElement('video');
-              newMedia_video.playsInline = true;
-              newMedia_video.autoplay = true;
-
-              newMedia_audio = document.createElement('audio');
-              // newMedia_audio.controls = true;
-              newMedia_audio.autoplay = true;
-
-              stream.attach(newMedia_video);
-              remoteMediaArea.appendChild(newMedia_video);
-              stream.attach(newMedia_audio);
-              remoteMediaArea.appendChild(newMedia_audio);
+              let newMedia; // 3-2-2
+              switch (stream.track.kind) {
+                case 'video':
+                  newMedia = document.createElement('video');
+                  newMedia.playsInline = true;
+                  newMedia.autoplay = true;
+                  break;
+                case 'audio':
+                  newMedia = document.createElement('audio');
+                  newMedia.controls = true;
+                  newMedia.autoplay = true;
+                  break;
+                default:
+                  return;
+              }
+              stream.attach(newMedia); // 3-2-3
+              remoteMediaArea.appendChild(newMedia);
             })();
           };
           
