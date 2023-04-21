@@ -104,7 +104,7 @@ const token = new SkyWayAuthToken({
                   break;
                 case 'audio':
                   newMedia = document.createElement('audio');
-                  newMedia.controls = true;
+                  // newMedia.controls = true;
                   newMedia.autoplay = true;
                   break;
                 default:
@@ -123,3 +123,4 @@ const token = new SkyWayAuthToken({
           });
 
 })(); // 1
+
