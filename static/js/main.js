@@ -87,13 +87,27 @@ const token = new SkyWayAuthToken({
               // 3-2
               const { stream } = await me.subscribe(publication.id); // 3-2-1
 
+              // let newMedia_video, newMedia_audio;
+              // newMedia_video = document.createElement('video');
+              // newMedia_video.playsInline = true; // 動画を全画面モードではなく、インラインで再生する
+              // newMedia_video.autoplay = true; // 動画の自動再生
+
+              // stream.attach(newMedia_video); // 3-2-3
+              // remoteMediaArea.appendChild(newMedia_video);
+
               let newMedia_video, newMedia_audio;
               newMedia_video = document.createElement('video');
               newMedia_video.playsInline = true;
               newMedia_video.autoplay = true;
 
-              stream.attach(newMedia_video); // 3-2-3
+              newMedia_audio = document.createElement('audio');
+              newMedia_audio.controls = true;
+              newMedia_audio.autoplay = true;
+
+              stream.attach(newMedia_video);
               remoteMediaArea.appendChild(newMedia_video);
+              stream.attach(newMedia_audio);
+              remoteMediaArea.appendChild(newMedia_audio);
             })();
           };
           
