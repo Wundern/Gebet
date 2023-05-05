@@ -128,13 +128,13 @@ const token = new SkyWayAuthToken({
 const muteUnmute = () => {
   console.log("click");
   const { audio, video } = SkyWayStreamFactory.createMicrophoneAudioAndCameraStream();
-  const enabled = audio.enabled;
+  const enabled = audio.enable();
   if (enabled) {
-      audio.enabled = false;
-      setUnmuteButton();
+    audio.disable();
+    setUnmuteButton();
   } else {
-      setMuteButton();
-      audio.enabled = true;
+    audio.enable();
+    setMuteButton();
   }
 }
 
