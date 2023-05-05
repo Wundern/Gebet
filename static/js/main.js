@@ -124,3 +124,32 @@ const token = new SkyWayAuthToken({
 
 })(); // 1
 
+//ミュート・アンミュート
+const muteUnmute = () => {
+  if (enabled) {
+      audio.enabled = false;
+      setUnmuteButton();
+  } else {
+      setMuteButton();
+      audio.enabled = true;
+  }
+}
+
+//ミュートボタン
+const setMuteButton = () => {
+  const html = `
+      <i class="fas fa-microphone"></i>
+      <span>Mute</span>    
+  `
+  document.querySelector('.main_mute_button').innerHTML = html;
+}
+
+//アンミュートボタン
+const setUnmuteButton = () => {
+  const html = `
+      <i class="unmute fas fa-microphone-slash"></i>
+      <span>Unmute</span>    
+  `
+  document.querySelector('.main_mute_button').innerHTML = html;
+}
+
