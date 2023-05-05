@@ -129,10 +129,10 @@ const muteUnmute = () => {
   console.log("click");
   const enabled = SkyWayStreamFactory.createMicrophoneAudioStream.enabled;
   if (enabled) {
-    enabled = false;
+    SkyWayStreamFactory.createMicrophoneAudioStream.disable();
     setUnmuteButton();
   } else {
-    enabled = true;
+    SkyWayStreamFactory.createMicrophoneAudioStream.enable();
     setMuteButton();
   }
 }
