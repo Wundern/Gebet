@@ -126,6 +126,7 @@ const token = new SkyWayAuthToken({
 
 //ミュート・アンミュート
 const muteUnmute = () => {
+  console.log("click");
   const audio = SkyWayStreamFactory.createMicrophoneAudio();
   const enabled = audio.enabled;
   if (enabled) {
