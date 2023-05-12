@@ -134,12 +134,12 @@ const muteUnmute = () => {
   console.log("click");
   if (a==1) {
     console.log("if");
-    SkyWayStreamFactory.createMicrophoneAudioStream.disable();
+    SkyWayStreamFactory.createMicrophoneAudioStream() = false;
     setUnmuteButton();
     a = 0;
   } else {
     console.log("else");
-    SkyWayStreamFactory.createMicrophoneAudioStream.enabled();
+    SkyWayStreamFactory.createMicrophoneAudioStream() = true;
     setMuteButton();
     a = 1;
   }
@@ -168,11 +168,11 @@ const setUnmuteButton = () => {
 //ビデオの開始・停止
 const playStop = () => {
   if (v==1) {
-    SkyWayStreamFactory.createCameraVideoStream.disable();
+    SkyWayStreamFactory.createCameraVideoStream() = false;
     setPlayVideo();
     v = 0;
   } else {
-    SkyWayStreamFactory.createCameraVideoStream.enabled();
+    SkyWayStreamFactory.createCameraVideoStream() = true;
     setStopVideo();
     v = 1;
   }
