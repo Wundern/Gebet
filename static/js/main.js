@@ -168,7 +168,7 @@ const setUnmuteButton = () => {
 //ビデオの開始・停止
 const playStop = () => {
   if (v==1) {
-    localVideo.muted();
+    localVideo.muted() = true;
     setPlayVideo();
     v = 0;
   } else {
