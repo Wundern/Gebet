@@ -52,8 +52,10 @@ const token = new SkyWayAuthToken({
 
     //const { audio, video } = await SkyWayStreamFactory.createMicrophoneAudioAndCameraStream(); // 2
     const audio = await SkyWayStreamFactory.createMicrophoneAudioStream();
-    const video = await SkyWayStreamFactory.createCameraVideoStream();
     a = 1;
+    const video = await SkyWayStreamFactory.createCameraVideoStream();
+    v = 1;
+
 
     video.attach(localVideo); // 3
     await localVideo.play(); // 4
@@ -132,12 +134,12 @@ const muteUnmute = () => {
   console.log("click");
   if (a==1) {
     console.log("if");
-    SkyWayStreamFactory.createMicrophoneAudioStream = false;
+    SkyWayStreamFactory.createMicrophoneAudioStream()[0].enabled = false;
     setUnmuteButton();
     a = 0;
   } else {
     console.log("else");
-    SkyWayStreamFactory.createMicrophoneAudioStream.enabled;
+    SkyWayStreamFactory.createMicrophoneAudioStream()[0].enabled = true;
     setMuteButton();
     a = 1;
   }
@@ -161,5 +163,36 @@ const setUnmuteButton = () => {
       <span>Unmute</span>    
   `
   document.querySelector('.main_mute_button').innerHTML = html;
+}
+
+//ビデオの開始・停止
+const playStop = () => {
+  if (v==1) {
+    SkyWayStreamFactory.createCameraVideoStream()[0].enabled = false;
+    setPlayVideo();
+    v = 0;
+  } else {
+    SkyWayStreamFactory.createCameraVideoStream()[0].enabled = true;
+    setStopVideo();
+    v = 1;
+  }
+}
+
+//ビデオ停止ボタン
+const setStopVideo = () => {
+  const html = `
+      <i class ="fas fa-video"></i>
+      <span>Stop Video</span>
+  `
+  document.querySelector('.main_video_button').innerHTML = html;
+}
+
+//ビデオ開始ボタン
+const setPlayVideo = () => {
+  const html = `
+      <i class ="stop fas fa-video-slash"></i>
+      <span>Play Video</span>
+  `
+  document.querySelector('.main_video_button').innerHTML = html;
 }
 
