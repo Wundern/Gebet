@@ -53,6 +53,7 @@ const token = new SkyWayAuthToken({
     //const { audio, video } = await SkyWayStreamFactory.createMicrophoneAudioAndCameraStream(); // 2
     const audio = await SkyWayStreamFactory.createMicrophoneAudioStream();
     const video = await SkyWayStreamFactory.createCameraVideoStream();
+    a = 1;
 
     video.attach(localVideo); // 3
     await localVideo.play(); // 4
@@ -129,15 +130,16 @@ const token = new SkyWayAuthToken({
 //ミュート・アンミュート
 const muteUnmute = () => {
   console.log("click");
-  const enabled = SkyWayStreamFactory.createMicrophoneAudioStream.enabled;
-  if (enabled) {
+  if (a==1) {
     console.log("if");
-    SkyWayStreamFactory.createMicrophoneAudioStream.enabled;
-    setMuteButton();
-  } else {
-    console.log("else");
     SkyWayStreamFactory.createMicrophoneAudioStream.disable;
     setUnmuteButton();
+    a = 0;
+  } else {
+    console.log("else");
+    SkyWayStreamFactory.createMicrophoneAudioStream.enabled;
+    setMuteButton();
+    a = 1;
   }
 }
 
