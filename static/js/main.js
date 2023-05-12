@@ -141,6 +141,7 @@ const muteUnmute = () => {
 
 //ミュートボタン
 const setMuteButton = () => {
+  console.log("mute");
   const html = `
       <i class="fas fa-microphone"></i>
       <span>Mute</span>    
@@ -150,6 +151,7 @@ const setMuteButton = () => {
 
 //アンミュートボタン
 const setUnmuteButton = () => {
+  console.log("unmute");
   const html = `
       <i class="unmute fas fa-microphone-slash"></i>
       <span>Unmute</span>    
