@@ -129,15 +129,15 @@ const token = new SkyWayAuthToken({
 //ミュート・アンミュート
 const muteUnmute = () => {
   console.log("click");
-  const enabled = SkyWayStreamFactory.createMicrophoneAudioStream.enabled;
+  const enabled = SkyWayStreamFactory.createMicrophoneAudioStream();
   if (enabled) {
     console.log("if");
-    SkyWayStreamFactory.createMicrophoneAudioStream = false;
-    setUnmuteButton();
-  } else {
-    console.log("else");
     SkyWayStreamFactory.createMicrophoneAudioStream.enabled;
     setMuteButton();
+  } else {
+    console.log("else");
+    SkyWayStreamFactory.createMicrophoneAudioStream.disable;
+    setUnmuteButton();
   }
 }
 
