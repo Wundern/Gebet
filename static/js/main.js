@@ -50,8 +50,10 @@ const token = new SkyWayAuthToken({
 
     const myId = document.getElementById('my-id');
 
-    const { audio, video } = await SkyWayStreamFactory.createMicrophoneAudioAndCameraStream(); // 2
-  
+    //const { audio, video } = await SkyWayStreamFactory.createMicrophoneAudioAndCameraStream(); // 2
+    const audio = await SkyWayStreamFactory.createMicrophoneAudioStream();
+    const video = await SkyWayStreamFactory.createCameraVideoStream();
+
     video.attach(localVideo); // 3
     await localVideo.play(); // 4
 
