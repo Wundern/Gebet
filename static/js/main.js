@@ -166,7 +166,7 @@ const token = new SkyWayAuthToken({
 
   //ビデオの開始・停止
   const playStop = () => {
-
+    console.log(v);
     if (v==1) {
       publication.disable();
       setPlayVideo();
