@@ -194,6 +194,8 @@ const token = new SkyWayAuthToken({
       document.querySelector('.main_video_button').innerHTML = html;
     }
 
+    const socket = io('/');
+    
     let text = $('input');
 
     $('html').keydown((e) => {
