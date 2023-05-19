@@ -126,6 +126,7 @@ const token = new SkyWayAuthToken({
       subscribeAndAttach(e.publication);
     });
 
+    //ミュート・アンミュート
     document.getElementById("muteUnmute()").onclick = function(){
       console.log("a=" + a);
       if (a==1) {
@@ -140,22 +141,6 @@ const token = new SkyWayAuthToken({
         a = 1;
       }
     };
-
-    //ミュート・アンミュート
-    // const muteUnmute = () => {
-    //   console.log("a=" + a);
-    //   if (a==1) {
-    //     console.log("if");
-    //     publication_audio.disable();
-    //     setUnmuteButton();
-    //     a = 0;
-    //   } else {
-    //     console.log("else");
-    //     publication_audio.enable();
-    //     setMuteButton();
-    //     a = 1;
-    //   }
-    // }
 
     //ミュートボタン
     const setMuteButton = () => {
@@ -177,6 +162,7 @@ const token = new SkyWayAuthToken({
       document.querySelector('.main_mute_button').innerHTML = html;
     }
 
+    //ビデオ開始・停止
     document.getElementById("playStop()").onclick = function(){
       console.log("v=" + v);
       if (v==1) {
@@ -189,20 +175,6 @@ const token = new SkyWayAuthToken({
         v = 1;
       }
     };
-
-    // //ビデオの開始・停止
-    // const playStop = () => {
-    //   console.log("v=" + v);
-    //   if (v==1) {
-    //     publication_video.disable();
-    //     setPlayVideo();
-    //     v = 0;
-    //   } else {
-    //     publication_video.enable();
-    //     setStopVideo();
-    //     v = 1;
-    //   }
-    // }
 
     //ビデオ停止ボタン
     const setStopVideo = () => {
@@ -221,6 +193,20 @@ const token = new SkyWayAuthToken({
       `
       document.querySelector('.main_video_button').innerHTML = html;
     }
+
+    let text = $('input');
+
+    $('html').keydown((e) => {
+        if(e.which == 13 && text.val().length !== 0){
+            //console.log(text.val())
+            socket.emit('message', text.val());
+            text.val('')
+        }
+    })
+
+    socket.on('createMessage', message => {
+        $('.messages').append(`<li class="message"><b>user</b><br/>${message}</li>`);
+    })
 
 })(); // 1
 
