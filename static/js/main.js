@@ -126,8 +126,7 @@ const token = new SkyWayAuthToken({
       subscribeAndAttach(e.publication);
     });
 
-    //ミュート・アンミュート
-    const muteUnmute = () => {
+    document.getElementById("muteUnmute").onclick = function(){
       console.log("a=" + a);
       if (a==1) {
         console.log("if");
@@ -140,7 +139,23 @@ const token = new SkyWayAuthToken({
         setMuteButton();
         a = 1;
       }
-    }
+    };
+
+    //ミュート・アンミュート
+    // const muteUnmute = () => {
+    //   console.log("a=" + a);
+    //   if (a==1) {
+    //     console.log("if");
+    //     publication_audio.disable();
+    //     setUnmuteButton();
+    //     a = 0;
+    //   } else {
+    //     console.log("else");
+    //     publication_audio.enable();
+    //     setMuteButton();
+    //     a = 1;
+    //   }
+    // }
 
     //ミュートボタン
     const setMuteButton = () => {
@@ -162,8 +177,7 @@ const token = new SkyWayAuthToken({
       document.querySelector('.main_mute_button').innerHTML = html;
     }
 
-    //ビデオの開始・停止
-    const playStop = () => {
+    document.getElementById("playStop").onclick = function(){
       console.log("v=" + v);
       if (v==1) {
         publication_video.disable();
@@ -174,7 +188,21 @@ const token = new SkyWayAuthToken({
         setStopVideo();
         v = 1;
       }
-    }
+    };
+
+    // //ビデオの開始・停止
+    // const playStop = () => {
+    //   console.log("v=" + v);
+    //   if (v==1) {
+    //     publication_video.disable();
+    //     setPlayVideo();
+    //     v = 0;
+    //   } else {
+    //     publication_video.enable();
+    //     setStopVideo();
+    //     v = 1;
+    //   }
+    // }
 
     //ビデオ停止ボタン
     const setStopVideo = () => {
