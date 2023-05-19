@@ -126,7 +126,7 @@ const token = new SkyWayAuthToken({
       subscribeAndAttach(e.publication);
     });
 
-    document.getElementById("muteUnmute").onclick = function(){
+    document.getElementById("muteUnmute()").onclick = function(){
       console.log("a=" + a);
       if (a==1) {
         console.log("if");
@@ -177,7 +177,7 @@ const token = new SkyWayAuthToken({
       document.querySelector('.main_mute_button').innerHTML = html;
     }
 
-    document.getElementById("playStop").onclick = function(){
+    document.getElementById("playStop()").onclick = function(){
       console.log("v=" + v);
       if (v==1) {
         publication_video.disable();
