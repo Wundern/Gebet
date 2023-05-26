@@ -194,9 +194,6 @@ const token = new SkyWayAuthToken({
       document.querySelector('.main_video_button').innerHTML = html;
     }
 
-    //テキストチャット
-    
-
     const socket = io('/');
     
     let text = $('input');
