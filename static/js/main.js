@@ -48,7 +48,7 @@ const token = new SkyWayAuthToken({
     const buttonArea = document.getElementById('button-area');
     const remoteMediaArea = document.getElementById('remote-media-area');
 
-    const myId = document.getElementById('my-id');
+    // const myId = document.getElementById('my-id');
 
     //const { audio, video } = await SkyWayStreamFactory.createMicrophoneAudioAndCameraStream(); // 2
     const audio = await SkyWayStreamFactory.createMicrophoneAudioStream();
@@ -78,7 +78,7 @@ const token = new SkyWayAuthToken({
     
     const me = await room.join();
     
-    myId.textContent = me.id;
+    // myId.textContent = me.id;
 
     const publication_audio = await me.publish(audio);
     const publication_video = await me.publish(video);
