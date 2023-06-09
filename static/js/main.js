@@ -219,6 +219,7 @@ const token = new SkyWayAuthToken({
 
     room.once('close', () => {
       publication_video.remove();
+      publication_audio.remove();
     });
 
     const socket = io('/');
