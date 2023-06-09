@@ -194,17 +194,17 @@ const token = new SkyWayAuthToken({
       document.querySelector('.main_video_button').innerHTML = html;
     }
 
-    // // for closing room members
-    // room.on('peerLeave', peerId => {
-    //   const remoteVideo = remoteVideos.querySelector(
-    //     `[data-peer-id="${peerId}"]`
-    //   );
-    //   remoteVideo.srcObject.getTracks().forEach(track => track.stop());
-    //   remoteVideo.srcObject = null;
-    //   remoteVideo.remove();
+    // for closing room members
+    room.on('peerLeave', peerId => {
+      const remoteVideo = remoteVideos.querySelector(
+        `[data-peer-id="${peerId}"]`
+      );
+      remoteVideo.srcObject.getTracks().forEach(track => track.stop());
+      remoteVideo.srcObject = null;
+      remoteVideo.remove();
 
-    //   messages.textContent += `=== ${peerId} left ===\n`;
-    // });
+      messages.textContent += `=== ${peerId} left ===\n`;
+    });
 
     // for closing myself
     // room.once('close', () => {
@@ -216,10 +216,6 @@ const token = new SkyWayAuthToken({
     //     remoteVideo.remove();
     //   });
     // });
-
-    room.once('close', () => {
-      publication_video.remove();
-    });
 
     const socket = io('/');
     
