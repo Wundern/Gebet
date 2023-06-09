@@ -218,8 +218,7 @@ const token = new SkyWayAuthToken({
     // });
 
     room.once('close', () => {
-      const close_video = document.querySelector('video');
-      close_video.remove();
+      publication_video.remove();
     });
 
     const socket = io('/');
