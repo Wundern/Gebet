@@ -196,7 +196,7 @@ const token = new SkyWayAuthToken({
 
     // for closing room members
     room.on('peerLeave', peerId => {
-      const remoteVideo = remoteMediaArea.querySelector(
+      const remoteVideo = remoteVideos.querySelector(
         `[data-peer-id="${peerId}"]`
       );
       remoteVideo.srcObject.getTracks().forEach(track => track.stop());
