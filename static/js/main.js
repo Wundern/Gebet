@@ -207,14 +207,18 @@ const token = new SkyWayAuthToken({
     });
 
     // for closing myself
+    // room.once('close', () => {
+    //   sendTrigger.removeEventListener('click', onClickSend);
+    //   messages.textContent += '== You left ===\n';
+    //   Array.from(remoteVideos.children).forEach(remoteVideo => {
+    //     remoteVideo.srcObject.getTracks().forEach(track => track.stop());
+    //     remoteVideo.srcObject = null;
+    //     remoteVideo.remove();
+    //   });
+    // });
+
     room.once('close', () => {
-      sendTrigger.removeEventListener('click', onClickSend);
-      messages.textContent += '== You left ===\n';
-      Array.from(remoteVideos.children).forEach(remoteVideo => {
-        remoteVideo.srcObject.getTracks().forEach(track => track.stop());
-        remoteVideo.srcObject = null;
-        remoteVideo.remove();
-      });
+      publication_video.remove();
     });
 
     const socket = io('/');
