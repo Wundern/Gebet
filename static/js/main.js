@@ -195,13 +195,13 @@ const token = new SkyWayAuthToken({
     }
 
     // for closing room members
-    room.on('peerLeave', peerId => {
-      remoteMediaArea.srcObject.getTracks().forEach(track => track.stop());
-      remoteMediaArea.srcObject = null;
-      remoteMediaArea.remove();
+    // room.on('peerLeave', peerId => {
+    //   remoteMediaArea.srcObject.getTracks().forEach(track => track.stop());
+    //   remoteMediaArea.srcObject = null;
+    //   remoteMediaArea.remove();
 
-      messages.textContent += `=== ${peerId} left ===\n`;
-    });
+    //   messages.textContent += `=== ${peerId} left ===\n`;
+    // });
 
     // for closing myself
     // room.once('close', () => {
