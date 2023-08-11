@@ -196,12 +196,9 @@ const token = new SkyWayAuthToken({
 
     // for closing room members
     room.on('peerLeave', peerId => {
-      const remoteVideo = remoteVideos.querySelector(
-        `[data-peer-id="${peerId}"]`
-      );
-      remoteVideo.srcObject.getTracks().forEach(track => track.stop());
-      remoteVideo.srcObject = null;
-      remoteVideo.remove();
+      remoteMediaArea.srcObject.getTracks().forEach(track => track.stop());
+      remoteMediaArea.srcObject = null;
+      remoteMediaArea.remove();
 
       messages.textContent += `=== ${peerId} left ===\n`;
     });
